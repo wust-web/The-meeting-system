@@ -1,0 +1,4 @@
+项目托管在GitHub上，放在wust-team团队下。加入团队后，想clone分支到本地working space 。clone分支后，建立自己的分支，在分支开发，然后pull request。
+
+
+关于项目协作方案（前端），见word文档
