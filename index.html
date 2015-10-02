@@ -30,6 +30,8 @@
         }
 
         $("#user_t").focus(function() {
+            $(".login-i").css("backgroundPosition","0px -48px");
+            $(".pwd").css("backgroundPosition","-48px 0px");
             $(this).hide();
             $("#username").show();
             $("#username").focus();
@@ -50,6 +52,8 @@
 
 
         $("#pwd_t").focus(function() {
+            $(".login-i").css("backgroundPosition","0px 0px");
+            $(".pwd").css("backgroundPosition","-48px -48px");
             $(this).hide();
             $("#password").show();
             $("#password").focus();
@@ -99,6 +103,8 @@
             var username = $("input[name='username']").val();
             if (username == "") {
                 // alert("管理员/高校代码/注册账号)");
+                $(".login-i").css("backgroundPosition","0px -96px");
+                $(".pwd").css("backgroundPosition","-48px 0px");
                 $(".mes-back").html("请输入有效的管理员/高校代码/注册账号").insertAfter($(".login-i")[0]);
                 $("input[name='username']").focus();
                 return false;
@@ -109,6 +115,8 @@
                 var reg2 = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/; //邮箱格式
                 if (!reg2.test(username)) {
                     // alert("请输入有效的管理员/高校代码/注册账号");
+                    $(".login-i").css("backgroundPosition","0px -96px");
+                    $(".pwd").css("backgroundPosition","-48px 0px");
                     $(".mes-back").html("请输入有效的管理员/高校代码/注册账号").insertAfter($(".login-i")[0]);
                     $("input[name='username']").focus();
                     return false;
@@ -118,6 +126,8 @@
             var password = $("input[name='password']").val();
             if (password == "") {
                 // alert("请输入用户密码(Password)");
+                $(".login-i").css("backgroundPosition","0px 0px");
+                $(".pwd").css("backgroundPosition","-48px -96px");
                 $(".mes-back").html("请输入用户密码(Password)").insertAfter($(".pwd"));
                 $("input[name='password']").focus();
                 return false;
