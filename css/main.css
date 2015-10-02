@@ -9,14 +9,14 @@
 
 
 /*common*/
-
-
-/*login*/
-
 html {
     width: 100%;
     height: 100%;
 }
+
+/*login*/
+
+
 
 body {
     background: #0B98D7 url(../img/login/background.png) repeat-x scroll left top;
@@ -31,7 +31,7 @@ body {
     float: left;
     width: 50%;
     height: 90%;
-    line-height: 600px;
+    line-height: 500px;
     text-align: center;
     font-size: 54px;
     background: url();
@@ -82,7 +82,7 @@ body {
     line-height: 34px;
 }
 
-.login-a label {
+.login-a label,.book_6 {
     display: inline-block;
     height: 35px;
     width: 300px;
@@ -92,11 +92,11 @@ body {
 .mes-back{ height: 20px;
     width: 300px;margin: 10px auto 0;
     line-height: 20px;color:#EF1959;}
-.login-a a {
+.login-a a,.book_6  {
     color: #FFF;
     font-size: 14px;
 }
-
+.book_6{margin: 0;}
 .login-a a:hover {
     text-decoration: underline;
     color: #FFF;
@@ -126,6 +126,39 @@ body {
     line-height: 5;
     text-align: center;
 }
+/*公告通知*/
+
+/*遮罩层*/
+.mask{width: 100%;height: 100%;position: fixed;top: 0px;left: 0px;background: url(../img/login/mask.png);z-index: 8;display: none;}
+.news{width: 976px;height: 594px;position: absolute;left:50%;margin-left:-488px;top: -600px;z-index: 10;background: #e8e8e8;border-radius: 6px;}
+.news-top{margin: 0px 10px;height: 35px;color: #333333;line-height: 35px;}
+.news-top .tis{float: left;}
+.news-body{/*margin:0px 10px 0px 10px;*/padding: 10px;}
+.news-body,.news-body ul{overflow: hidden;background: #ffffff;}
+.news-body ul{margin:8px 10px;background: #ffffff;border-bottom: 1px solid #e0e0e0;height: 427px;overflow: auto;}
+.news-body ul li{overflow: hidden;min-height: 61px;line-height: 61px;}
+.news-time{width: 150px;float: left;color: #999999;font-size: 13px;border-right: 2px solid #efefef;text-indent: 20px;position: relative;}
+.news-time .po{width: 12px;height: 12px;background: url(../img/po.png) no-repeat;position: absolute;right: -7px;top: 50%;margin-top: -6px;}
+.news-txt{min-width: 735px;margin-left:10px;float: left;color: #666666;font-size: 13px;text-indent: 30px;border-bottom: 2px dashed #efefef;height: 59px;}
+.ntxt{border-bottom:none;height: 61px;}
+.news-body-top{height: 46px;border-bottom: 1px solid #e0e0e0;margin: 0px 10px;position: relative;background: #fff;}
+.gb{float: right;background: url(../img/login/gb.png);width: 13px;height: 12px;display: block;margin-right: 8px;margin-top: 13px;}
+.news-body-title{position: absolute;bottom: -1px;border-bottom: 2px solid #0085d0;color: #0085d0;font-size: 16px;padding: 0px 15px;line-height: 40px;}
+.news-body-bottom{overflow: hidden;height: 45px;background: #fff;margin: 0px 10px;background: #fff;position: relative;z-index: 10;}
+.news-body-bottom .fh{width: 81px;height: 27px; background: url(../img/fh.png) no-repeat;margin-left: 10px;margin-top: 6px;float: left;}
+.news-body-bottom .pag{float: right;color: #999999;font-size: 12px;margin-right: 10px;margin-top: 12px;}
+.news-body-bottom .pag a{color: #999999;}
+.news-body-bottom .pag span{color: #f10101;}
+.news-bodys{display: none;}
+.news-body li a{cursor:pointer}
+.news-body-txt{min-height: 424px;margin:10px;overflow: auto;}
+.news-body-txt .time{color: red;font-size: 13px;text-indent: 20px;margin-bottom: 20px;}
+.news-body-txt {color: #999999;font-size: 13px;text-indent: 20px;line-height: 25px;}
+.pay-body-txt {text-align: center;margin-top: 180px;}
+.pay-body-txt .id{color: #206baf;text-align: center;font-size: 14px;margin-bottom: 20px;}
+.pay-body-txt .paym{color: #206baf;text-align: center;font-size: 24px;}
+.pay-body-txt .text{color: #8a8a8a;text-align: center;font-size: 14px;margin-top: 62px;margin-bottom: 60px;}
+.payb{width: 158px;height: 51px;text-align: center;line-height: 51px;margin: auto;background: #5eaeff;color: #fff;}
 
 
 /*响应式*/

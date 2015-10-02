@@ -139,17 +139,7 @@
         })
     })
 
-    function getrandomImg(username) {
-        var date = new Date().getTime();
-        $.getJSON("/randomKey.action?username=" + username + "&time=" + date, function(msg) {
-            var url = "/randomImage.action?k1=" + msg[0] + "&k2=" + msg[1] + "&uno=" + username + "&time=" + date;
-            $("#key1").val(msg[0]);
-            $("#key2").val(msg[1]);
-            $("#random_img").attr("src", url);
-            $("#yzm_msg").hide();
-            $("#yzm_tr").show();
-        })
-    }
+
     </script>
 </head>
 
@@ -189,13 +179,17 @@
                     </div> -->
                     <input class="login-bn" onclick="$('#form1').submit();"type="submit" value="登 录 sign in">
                     <div class="mes-back"></div>
+
+                    <div class="book_6" id="go_cover">
+                        <a href="#">会议公告</a>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
     <div class="footer">
         <p>
-            地址：湖北省武汉市青山区和平大道　邮政编码：430000　电话：　<span>&copy 2006-2015　<a target="_blank" href="https://github.com/wust-web">武汉科技大学web前端团队</a></span>
+            地址：湖北省武汉市青山区和平大道　邮政编码：430000　电话：15671592309 <span>&copy 2006-2015　<a target="_blank" href="https://github.com/wust-web">武汉科技大学web前端团队</a></span>
         </p>
     </div>
     <!-- loginbody end -->
@@ -207,13 +201,14 @@
         </div>
         <div class="news-body news-bodys" style="display: block;height: 360px;position: relative">
             <div style="margin: 10px;">
-                <p style="line-height: 30px;margin: 10px;">信息公告
+                <p style="line-height: 30px;margin: 10px;text-align: center;font-size:16px;color:#EF1959">信息公告
+                </p >
+                <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                请大家加入web团队,地址是：https://github.com/wust-web ， 注册GitHub账号，加入武汉科技大学web前端团队。
                 </p>
-                <p style="line-height: 30px;margin: 10px;">
+                <p style="line-height: 30px;margin: 10px;text-indent:2em">
                 </p>
-                <p style="line-height: 30px;margin: 10px;">
-                </p>
-                <p style="line-height: 30px;margin: 10px;">
+                <p style="line-height: 30px;margin: 10px;text-indent:2em">
                 </p>
             </div>
         </div>
