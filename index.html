@@ -4,215 +4,329 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>湖北省2017年高校招生会议系统</title>
+    <title>招生会议|信息公告</title>
     <meta name="description" content="">
     <meta name="keywords" content="高校招生系统|会议系统|高考|大学">
     <link rel="shortcut icon" href="http://littlewhitechen.github.io/img/icon/litIcon.ico">
     <link href="" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet" />
-    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css//reset.css" rel="stylesheet" />
     <!--[if lte IE 6]>
         <link href="css/ie.css" rel="stylesheet" />
     <![endif]-->
     <script src="js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript">
-    if (window != top)
-        top.location.href = location.href;
-
-    $(function() {
-
-
-        $(document).onkeydown = function(ev) {
-            var ev = window.event || ev;
-            if (ev.keyCode == 13) {
-                $('#form1').submit();
-            }
-        }
-
-        $("#user_t").focus(function() {
-            $(".login-i").css("backgroundPosition","0px -48px");
-            $(".pwd").css("backgroundPosition","-48px 0px");
-            $(this).hide();
-            $("#username").show();
-            $("#username").focus();
-            $(".mes-back").html("");
-        });
-
-        $("#username").blur(function() {
-            var v = $(this).val();
-            if (v == "") {
-                $(this).hide();
-                $("#user_t").show();
-            } else {
-                $("#msg").hide();
-            }
-            $(".mes-back").html("");
-        });
-
-
-
-        $("#pwd_t").focus(function() {
-            $(".login-i").css("backgroundPosition","0px 0px");
-            $(".pwd").css("backgroundPosition","-48px -48px");
-            $(this).hide();
-            $("#password").show();
-            $("#password").focus();
-            $(".mes-back").html("");
-        })
-
-        $("#password").blur(function() {
-            var v = $(this).val();
-            if (v == "") {
-                $(this).hide();
-                $("#pwd_t").show();
-            }
-            $(".mes-back").html("");
-        })
-
-
-
-        $("input[name='password']").blur(function() {
-            var v = $(this).val();
-            if (v == "") {
-                $("#mm_span").text("请输入密码(Password)");
-            } else {
-                $("#mm_span").text("");
-            }
-        })
-
-        $("#form1").submit(function() {
-            /*
-            var usertype = "";
-            $("input[name='usertype']").each(function(){
-                if($(this).attr("checked")==true){
-                    usertype = $(this).val();
-                }
-            })
-
-            if(usertype==""){
-                alert("请选择您的身份类型");
-                return false;
-            }
-
-            if(usertype!="xs"&&usertype!="jg"&&usertype!="uid"){
-                alert("请选择有效的身份类型");
-                return false;
-            }
-            */
-
-            var username = $("input[name='username']").val();
-            if (username == "") {
-                // alert("管理员/高校代码/注册账号)");
-                $(".login-i").css("backgroundPosition","0px -96px");
-                $(".pwd").css("backgroundPosition","-48px 0px");
-                $(".mes-back").html("请输入有效的管理员/高校代码/注册账号").insertAfter($(".login-i")[0]);
-                $("input[name='username']").focus();
-                return false;
-            }
-
-            var reg = /^[A-Za-z0-9]+$/;
-            if (!reg.test(username)) {
-                var reg2 = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/; //邮箱格式
-                if (!reg2.test(username)) {
-                    // alert("请输入有效的管理员/高校代码/注册账号");
-                    $(".login-i").css("backgroundPosition","0px -96px");
-                    $(".pwd").css("backgroundPosition","-48px 0px");
-                    $(".mes-back").html("请输入有效的管理员/高校代码/注册账号").insertAfter($(".login-i")[0]);
-                    $("input[name='username']").focus();
-                    return false;
-                }
-            }
-
-            var password = $("input[name='password']").val();
-            if (password == "") {
-                // alert("请输入用户密码(Password)");
-                $(".login-i").css("backgroundPosition","0px 0px");
-                $(".pwd").css("backgroundPosition","-48px -96px");
-                $(".mes-back").html("请输入用户密码(Password)").insertAfter($(".pwd"));
-                $("input[name='password']").focus();
-                return false;
-            }
-
-
-
-            $("input[name='password']").val($.base64.encode(password));
-        })
-    })
-
-
-    </script>
 </head>
 
 <body>
-    <!-- header -->
-    <!--  <div class="header">
-        <div class="headerb">
-            <div class="logo"></div>
-            <div class="headern">
-               湖北省2017年高校招生会议系统
+    <div id="header">
+        <div class="h-content clear">
+            <div class="h-left fl clear">
+                <!-- <img src="img/system/logo.png" height="77" width="77" /> -->
+                <h1 class="fr">湖北招生会议管理系统</h1>
+            </div>
+            <div class="h-right fr">
+                <span id="user">chenkai 陈凯</span>
+                <span class="yuzhi">欢迎登陆</span> <span class="fenge">|</span>
+                <button id="quit">退出</button>
             </div>
         </div>
-    </div> -->
-    <!-- header end -->
-    <!--loginbody -->
-    <div class="login clear">
-        <div class="login-right">
-            湖北招生会议管理系统
+    </div>
+    <!-- 导航条 -->
+    <div id="navBar">
+        <ul>
+            <li class="active">
+                <h2>信息公告专栏</h2>
+            </li>
+            <li>
+                <h2>工作人员管理</h2>
+            </li>
+            <li>
+                <h2>单位信息维护</h2>
+            </li>
+        </ul>
+    </div>
+    <!-- 导航条 -->
+    <div id="container" class="clear">
+        <!-- 信息公告 -->
+        <div class="info" style="display:block;">
+            <div class="pulicTit">
+                <h3>信息公告</h3>
+            </div>
+            <p class="statement">信息公告：您可以通过公告查看系统使用说明，并且查看会议规划和安排，请及时关注</p>
+            <p class="statement">信息维护：可以添加不定数目的工作人员信息和高校或者单位具体信息，请确保信息准确，以便主办方统计信息。</p>
+            <div class="infoList">
+                <ol>
+                    <li><a href="">会议系统告知</a> <span id="infoTime">2015-10-03</span></li>
+                    <li><a href="">关于会议系统告知</a><span id="infoTime">2015-10-03</span></li>
+                    <li><a href="">高考时间</a><span id="infoTime">2015-10-03</span></li>
+                </ol>
+            </div>
         </div>
-        <form action="" name="form1" id="form1" method="post">
-            <div class="logins">
-                <div class="login-b">
-                    <div class="login-i">
-                        <input type="text" id="user_t" value="管理员/高校代码/注册账号" tabindex="2" style="color:#999;" />
-                        <input type="text" id="username" name="username" style="display: none;" tabindex="2" />
-                    </div>
-                    <div class="login-i pwd">
-                        <input type="text" style="color:#999;" id="pwd_t" value="请输入密码(Password)" tabindex="3" />
-                        <input type="password" id="password" name="password" style="display: none;" tabindex="3" />
-                    </div>
-                    <div class="login-a" id="login-a">
-                        <label for="login1" class="login1" style="font-size: 14px">
-                            <a href="" target="_blank">忘记登陆密码？</a>
-                        </label>
-                    </div>
-                    <!-- <div class="login-bn" onclick="$('#form1').submit();">登 录 sign in
-                    </div> -->
-                    <input class="login-bn" onclick="$('#form1').submit();"type="submit" value="登 录 sign in">
-                    <div class="mes-back"></div>
-
-                    <div class="book_6" id="go_cover">
-                        <a href="#">会议公告</a>
+        <!-- /信息公告 -->
+        <!-- 工作人员管理 -->
+        <div class="workManage" style="display: none;">
+            <div class="pulicTit">
+                <h3>工作人员管理</h3>
+            </div>
+            <div class="control">
+                <button id="sync" class="sync">刷新</button>
+                <button id="add" class="add">新增</button>
+                <button id="batchDel" class="batchDel">批量删除</button>
+                <button id="export" class="export">批量导出</button>
+            </div>
+            <div id="showData" class="showData">
+                <table border='1' cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>操作</th>
+                            <th>身份认证号</th>
+                            <th>所属单位</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>职务</th>
+                            <th>联系方式</th>
+                            <th>是否参会</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>424324562004284829</td>
+                            <td>武汉科技大学</td>
+                            <td>小王</td>
+                            <td>男</td>
+                            <td>处长</td>
+                            <td>15671592309</td>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>424324562004284829</td>
+                            <td>武汉科技大学</td>
+                            <td>小王</td>
+                            <td>男</td>
+                            <td>处长</td>
+                            <td>15671592309</td>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>424324562004284829</td>
+                            <td>武汉科技大学</td>
+                            <td>小王</td>
+                            <td>男</td>
+                            <td>处长</td>
+                            <td>15671592309</td>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>424324562004284829</td>
+                            <td>武汉科技大学</td>
+                            <td>小王</td>
+                            <td>男</td>
+                            <td>处长</td>
+                            <td>15671592309</td>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>424324562004284829</td>
+                            <td>武汉科技大学</td>
+                            <td>小王</td>
+                            <td>男</td>
+                            <td>处长</td>
+                            <td>15671592309</td>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>424324562004284829</td>
+                            <td>武汉科技大学</td>
+                            <td>小王</td>
+                            <td>男</td>
+                            <td>处长</td>
+                            <td>15671592309</td>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>424324562004284829</td>
+                            <td>武汉科技大学</td>
+                            <td>小王</td>
+                            <td>男</td>
+                            <td>处长</td>
+                            <td>15671592309</td>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>424324562004284829</td>
+                            <td>武汉科技大学</td>
+                            <td>小王</td>
+                            <td>男</td>
+                            <td>处长</td>
+                            <td>15671592309</td>
+                            <td>是</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 分页 -->
+            <div class="pages ">
+                <div class="pageCont clear">
+                    <p class="result fl">
+                        共<span id="jiluNum">1</span>条记录。每页显示<span>8</span>条，共<span id="pageNum">1</span>页，当前第<span id="nowNum">1</span>页
+                    </p>
+                    <div class="page-normal fl">
+                        <a class="firstPage"><span>首页</span></a>
+                        <a class="page-prev"><span>&lt;</span></a>
+                        <a class="page-current"><span>1</span></a>
+                        <a href="#"><span>2</span></a>
+                        <a href="#"><span>3</span></a>
+                        <a href="#"><span>4</span></a>
+                        <a href="#"><span>5</span></a>
+                        <a href="#"><span>6</span></a>
+                        <a href="#"><span>7</span></a>
+                        <span id="ellipsis">...</span>
+                        <a href="#"><span>199</span></a>
+                        <a href="#"><span>200</span></a>
+                        <a href="#" class="page-next"><span>&gt;</span></a>
+                        <a href="#" class="lastPage"><span>末页</span></a>
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
-    <div class="footer">
-        <p>
-            地址：湖北省武汉市青山区和平大道　邮政编码：430000　电话：15671592309 <span>&copy 2006-2015　<a target="_blank" href="https://github.com/wust-web">武汉科技大学web前端团队</a></span>
-        </p>
-    </div>
-    <!-- loginbody end -->
-    <script src="js/main.js" type="text/javascript"></script>
-    <div class="mask" style="z-index:999"></div>
-    <div class="pay2" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;background: #e8e8e8;border-radius: 6px;">
-        <div class="news-top">
-            <span class="gb pointer gb-new"></span>
         </div>
-        <div class="news-body news-bodys" style="display: block;height: 360px;position: relative">
-            <div style="margin: 10px;">
-                <p style="line-height: 30px;margin: 10px;text-align: center;font-size:16px;color:#EF1959">信息公告
-                </p >
-                <p style="line-height: 30px;margin: 10px;text-indent:2em">
-                请大家加入web团队,地址是：https://github.com/wust-web ， 注册GitHub账号，加入武汉科技大学web前端团队。
-                </p>
-                <p style="line-height: 30px;margin: 10px;text-indent:2em">
-                </p>
-                <p style="line-height: 30px;margin: 10px;text-indent:2em">
-                </p>
+
+
+        <!-- /工作人员管理 -->
+        <!-- 单位信息维护 -->
+        <div class="unitManage" style="display: none;">
+            <div class="pulicTit">
+                <h3>单位信息维护</h3>
             </div>
         </div>
+        <!-- /单位信息维护 -->
+
+        <!--  增加信息弹出表单 -->
+        <div class="mask" style="z-index:999"></div>
+        <div class="pay2" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;background: #e8e8e8;border-radius: 6px;">
+            <div class="news-top">
+                <span class="gb pointer gb-new"></span>
+            </div>
+            <div class="news-body news-bodys" style="display: block;height: 360px;position: relative">
+                <div style="margin: 10px;">
+                    <p style="line-height: 30px;margin: 10px;text-align: center;font-size:16px;color:#EF1959">信息公告
+                    </p >
+                    <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                    请大家加入web团队,地址是：https://github.com/wust-web ， 注册GitHub账号，加入武汉科技大学web前端团队。
+                    </p>
+                    <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                    </p>
+                    <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--  /增加信息弹出表单 -->
+
+
     </div>
+
+    <script type="text/javascript">
+    $(function() {
+        // 退出系统
+        $("#quit").click(function() {
+            // alert( $("#quit"));
+            window.location.href = "login.html";
+        });
+
+        // 左侧主导航
+        // $("#navBar").find("li:first").addClass("active");
+        // $(".info").css("display","block");
+        $("#navBar").find("li").click(function() {
+            $(this).addClass("active")
+                .siblings().removeClass();
+            $("#container").children().eq($(this).index()).css("display", "block")
+                .siblings().css("display", "none");
+        });
+
+        // 页面刷新
+        $("#sync").click(function() {
+            window.location.reload();
+        });
+
+        // 新增数据.弹出表单
+        // 关闭数据表单
+        $(".gb-new").click(function() {
+            $('.new').animate({
+                top: '-600px'
+            }, 500, function() {
+                $('.mask').hide()
+            });
+            $('.pay2').animate({
+                top: '-600px'
+            }, 500, function() {
+                $('.mask').hide()
+            });
+        });
+
+        // 添加数据
+        $("#add,#edit").click(function() {
+            // alert($('.mask'));
+            $('.mask').show();
+            $('.pay2').animate({
+                "top": "120px"
+            }, 500).show();
+        });
+
+        // 批量操作
+        $("#batchDel").click(function() {
+            $(".showData table tr td input:checked").parents("tr").remove();
+        });
+        // 删除数据
+        $("span[id='delete']").click(function() {
+            // alert( $(this).parents("tr").html());
+            $(this).parents("tr").remove();
+        });
+        // 修改数据
+
+
+
+    });
+    </script>
 </body>
 
 </html>

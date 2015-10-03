@@ -3,129 +3,349 @@
 /**
  *
  * @authors Your Name (you@example.org)
- * @date    2015-10-02 10:28:07
+ * @date    2015-10-03 10:46:56
  * @version $Id$
  */
 
 
-/*common*/
+/*-------------------------------------------------------------------------------------*/
+
+
+/*系统主框架*/
+
 html {
     width: 100%;
     height: 100%;
 }
 
-/*login*/
-
-
-
 body {
-    background: #0B98D7 url(../img/login/background.png) repeat-x scroll left top;
-    font: 12px/1.5 "Microsoft Yahei";
+    background: #F7F7F7;
 }
 
-.login {
-    height: 90%;
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 77px;
+    width: 100%;
+    background: #05A0E3 url(../img/system/head-bg.jpg) repeat-x left top;
+    line-height: 77px;
+    overflow: hidden;
+    box-shadow: rgba(229, 245, 229, 1) 0 12px 24px;
+    border-bottom: 1px solid #6CD6DA;
 }
 
-.login-right {
-    float: left;
-    width: 50%;
-    height: 90%;
-    line-height: 500px;
+#header .h-left {
+    margin-left: 20px;
     text-align: center;
-    font-size: 54px;
-    background: url();
-    white-space: nowrap;
 }
 
-#form1 {
-    float: right;
-    width: 50%;
-    height: 90%;
-    position: relative;
-}
+#header .h-left img {
 
-.logins {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    background: url(../img/login/login.png) repeat-y left top;
-    padding: 60px 20px 100px;
-    margin-left: -150px;
-    margin-top: -25%;
-    /*border: 2px solid #f1f1f1;*/
-    border-radius: 5px;
-    /*
-      box-shadow: 1px 1px 1px #f1f1f1;}*/
-}
-
-.login-i {
-    height: 35px;
-    width: 300px;
-    margin: 20px auto 0;
-    border: 1px solid #FFF;
-    background: #FFF url(../img/icon/pwd-icons-new.png) no-repeat left top;
-}
-
-.pwd {
-    background-position: -48px 0;
-}
-
-.login-i input {
-    width: 258px;
-    height: 34px;
+    border: none;
+    vertical-align: middle;
+    margin-right: 10px;
     outline: 0;
-    border: 0;
-    margin-left: 37px;
-    padding-left: 5px;
-    line-height: 34px;
 }
 
-.login-a label,.book_6 {
+#header .h-left h1 {
+    font-size: 20px;
+    font-family: "Microsoft YaHei Light";
+    vertical-align: middle;
+    color: #FFF;
+}
+
+#header .h-right {
+    margin-right: 40px;
+    font: 100 14px "宋体";
+    line-height: 77px;
+}
+
+#header .h-right #user {
     display: inline-block;
-    height: 35px;
-    width: 300px;
-    margin: 20px auto 0;
+    height: 77px;
+    color: #FF4200;
+    padding: 0 5px;
+    font-family: "Monaco";
+}
+
+#header .h-right .yuzhi {
+    color: #fff;
+    font-family: "Microsoft YaHei Light";
+}
+
+#header #quit {
+    border: 0;
+    background: none;
+    outline: none;
+    color: #FFF;
+    font-family: "Microsoft YaHei";
+    padding-left: 27px;
+    line-height: 20px;
+    background: url(../img/icon/quit.png) no-repeat left top;
+}
+
+.fenge {
+    color: #FFF;
+    height: 18px;
+    margin: 0 10px;
+    width: 1px;
+}
+
+#navBar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    z-index: 10;
+    width: 200px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    /* border-top: 1px solid #1ACDF7;*/
+}
+
+#navBar li {
+    height: 45px;
+    text-indent: 15px;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    color: #000;
+    cursor: pointer;
+}
+
+#navBar li h2 {
+    font: 14px/45px "Microsoft YaHei";
+}
+
+#navBar li.active {
+    border-left: 5px solid #FF4200;
+    color: #FF4200;
+    background: #EBEBEB;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    padding: 80px 0 0 0px;
+}
+
+#container .info,
+.workManage,
+.unitManage {
+    width: auto;
+    background: #F7F7F7;
+    margin-left: 220px;
+    padding: 0 0px 10px 10px;
+}
+
+.pulicTit {
+    height: 45px;
+    line-height: 45px;
+    margin-left: -30px;
+    padding-left: 30px;
+    background: #FFF url(../img/icon/address_tips.jpg) no-repeat 30px center;
+    /*border-top: 1px solid #1ACDF7;*/
+    margin-bottom: 7px;
+}
+
+.pulicTit h3 {
+    border-bottom: 1px solid #FF4200;
+    font-size: 14px;
+    text-indent: 25px;
+    display: inline-block;
+}
+
+
+/*.workManage .pulicTit{margin-bottom: 0;}*/
+
+#container .info .statement {
+    line-height: 1.56;
+    padding: 5px 0;
+}
+
+#container .infoList {
+    margin-top: 20px;
     line-height: 35px;
 }
-.mes-back{ height: 20px;
-    width: 300px;margin: 10px auto 0;
-    line-height: 20px;color:#EF1959;}
-.login-a a,.book_6  {
+
+#container .info li {
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+#infoTime {
+    margin-left: 20px;
+    font: 100 13px "Monaco";
+    color: #A6E22E;
+}
+
+.add,.sync,
+.export,.batchDel {
+    height: 30px;
+    line-height: 30px;
+    margin-right: 5px;
+    border-radius: 3px;
+    text-align: center;
+    border: none;
+    background: none;
     color: #FFF;
     font-size: 14px;
 }
-.book_6{margin: 0;}
-.login-a a:hover {
-    text-decoration: underline;
-    color: #FFF;
+
+.add,.sync {
+    background: #5785D4;
+    padding: 0 20px;
 }
 
-.login-bn {
-    font:14px "Microsoft YaHei,Monaco";
-    height: 35px;
-    width: 300px;
-    cursor: pointer;
-    margin: 20px auto 0;
-    background:#07ADE0;
-    line-height: 35px;
-    text-align: center;
-    font-size: 16px;
-    outline:0;
-    border:0;
-    border-radius: 3px;
+.export {
+    background: #FF4200;
 }
-.login-bn:hover{background: #05B2D3 ;}
-.footer {
+.batchDel {
+    background: #A6E22E;
+}
+.sync {
+    background: #A6E22E;
+}
+
+.control {
+    height: 45px;
+    font: 13px "Microsoft YaHei";
+    padding-right: 20px;
+}
+
+.showData {
+    padding-right: 30px;
+    overflow: hidden;
+}
+
+.showData table {
     width: 100%;
-    height: 10%;
+    margin: 0 auto;
+    font: 13px "Microsoft YaHei";
+    text-align: center;
+    border: 1px solid #A6E22E;
+    border-collapse: collapse;
 }
 
-.footer p {
-    line-height: 5;
-    text-align: center;
+table tr {
+    height: 40px;
+    background: #FFF;
 }
+
+table th {
+    color: #FF4200;
+    background: #F7F7F7;
+}
+
+table tr td {
+    width: 180px;
+}
+
+table tr td input[type="checkbox"] {
+    vertical-align: top;
+}
+
+table tr td #delete,
+table tr td #edit {
+    color: #000;
+}
+
+table tr td #delete:hover,
+table tr td #edit:hover {
+    color: #FF4200;
+    cursor: pointer;
+}
+
+
+/*分页*/
+
+.pages {
+    position:fixed;
+    bottom:-80px;
+    left: 100px;
+/*    margin-left: -50%;*/
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+
+.pageCont {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.pages p {
+    line-height: 28px;
+    margin-right: 20px;
+}
+
+.pages p span {
+    color: #FF4200;
+    padding: 0 5px;
+}
+
+.page-normal {
+    color: #ff6500;
+    text-align: center;
+    font-size: 0;
+}
+
+.page-normal a,
+.page-normal a:hover .page-normal .page-current {
+    display: inline-block;
+    padding: 0 0 0 3px;
+    font-size: 14px;
+    margin-left: 10px;
+    height: 28px;
+    background:url(../img/system/page-round.jpg) no-repeat 0 0;
+    border-radius:4px;
+}
+.page-normal a span,
+.page-normal .page-current span,
+.page-normal .page-prev span {
+    display: inline-block;
+    padding: 5px 10px 0 0;
+    font-size: 14px;
+    margin-left: 10px;
+    height: 23px;
+    border-radius:4px;
+    background: url(../img/system/page-round.jpg) no-repeat right 0;
+    cursor:pointer;
+}
+
+.page-normal .page-current,
+.page-normal a:hover {
+    background-position: 0 -28px;
+}
+
+.page-normal .page-current span,
+.page-normal a:hover span {
+    background-position: right -28px;
+    color: #fff;
+    border-radius:4px;
+}
+
+.page-normal a {
+    color: #FF4200;
+    text-decoration: none;
+}
+
+.page-normal .page-current {
+    color: #ff6500;
+}
+
+.page-normal .page-prev {
+    color: #ff7000;
+}
+
+#ellipsis {
+    color: #FF4200;
+    display: inline-block;
+    padding: 5px 10px 0 0;
+    font-size: 14px;
+    margin-left: 10px;
+    height: 23px;
+}
+
+
 /*公告通知*/
 
 /*遮罩层*/
@@ -142,7 +362,7 @@ body {
 .news-txt{min-width: 735px;margin-left:10px;float: left;color: #666666;font-size: 13px;text-indent: 30px;border-bottom: 2px dashed #efefef;height: 59px;}
 .ntxt{border-bottom:none;height: 61px;}
 .news-body-top{height: 46px;border-bottom: 1px solid #e0e0e0;margin: 0px 10px;position: relative;background: #fff;}
-.gb{float: right;background: url(../img/login/gb.png);width: 13px;height: 12px;display: block;margin-right: 8px;margin-top: 13px;}
+.gb{cursor:pointer;float: right;background: url(../img/login/gb.png);width: 13px;height: 12px;display: block;margin-right: 8px;margin-top: 13px;}
 .news-body-title{position: absolute;bottom: -1px;border-bottom: 2px solid #0085d0;color: #0085d0;font-size: 16px;padding: 0px 15px;line-height: 40px;}
 .news-body-bottom{overflow: hidden;height: 45px;background: #fff;margin: 0px 10px;background: #fff;position: relative;z-index: 10;}
 .news-body-bottom .fh{width: 81px;height: 27px; background: url(../img/fh.png) no-repeat;margin-left: 10px;margin-top: 6px;float: left;}
@@ -159,42 +379,3 @@ body {
 .pay-body-txt .paym{color: #206baf;text-align: center;font-size: 24px;}
 .pay-body-txt .text{color: #8a8a8a;text-align: center;font-size: 14px;margin-top: 62px;margin-bottom: 60px;}
 .payb{width: 158px;height: 51px;text-align: center;line-height: 51px;margin: auto;background: #5eaeff;color: #fff;}
-
-
-/*响应式*/
-
-@media screen and (max-width:986px) {
-    .login {
-        height: auto;
-        width:100%;
-    }
-    .login-right {
-        font-size: 30px;
-        float: none;
-        line-height: 1.5;
-        text-align: center;
-        width: 100%;
-        text-indent: 0;
-        margin: 0 auto;
-    }
-    #form1 {
-        float: none;
-        margin: 20px auto 0;
-        width: auto;
-        height: auto;
-    }
-    .logins {
-        position: relative;
-        top: 0;
-        left: 0;
-        margin: 0 auto;
-    }
-}
-
-
-
-@media screen and (max-width:768px) {
-    .login-right {
-        font-size: 28px;
-    }
-}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>湖北省2017年高校招生会议系统</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="高校招生系统|会议系统|高考|大学">
+    <link rel="shortcut icon" href="http://littlewhitechen.github.io/img/icon/litIcon.ico">
+    <link href="" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <!--[if lte IE 6]>
+        <link href="css/ie.css" rel="stylesheet" />
+    <![endif]-->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+    if (window != top)
+        top.location.href = location.href;
+
+    $(function() {
+
+
+        $(document).onkeydown = function(ev) {
+            var ev = window.event || ev;
+            if (ev.keyCode == 13) {
+                $('#form1').submit();
+            }
+        }
+
+        $("#user_t").focus(function() {
+            $(".login-i").css("backgroundPosition","0px -48px");
+            $(".pwd").css("backgroundPosition","-48px 0px");
+            $(this).hide();
+            $("#username").show();
+            $("#username").focus();
+            $(".mes-back").html("");
+        });
+
+        $("#username").blur(function() {
+            var v = $(this).val();
+            if (v == "") {
+                $(this).hide();
+                $("#user_t").show();
+            } else {
+                $("#msg").hide();
+            }
+            $(".mes-back").html("");
+        });
+
+
+
+        $("#pwd_t").focus(function() {
+            $(".login-i").css("backgroundPosition","0px 0px");
+            $(".pwd").css("backgroundPosition","-48px -48px");
+            $(this).hide();
+            $("#password").show();
+            $("#password").focus();
+            $(".mes-back").html("");
+        })
+
+        $("#password").blur(function() {
+            var v = $(this).val();
+            if (v == "") {
+                $(this).hide();
+                $("#pwd_t").show();
+            }
+            $(".mes-back").html("");
+        })
+
+
+
+        $("input[name='password']").blur(function() {
+            var v = $(this).val();
+            if (v == "") {
+                $("#mm_span").text("请输入密码(Password)");
+            } else {
+                $("#mm_span").text("");
+            }
+        })
+
+        $("#form1").submit(function() {
+            /*
+            var usertype = "";
+            $("input[name='usertype']").each(function(){
+                if($(this).attr("checked")==true){
+                    usertype = $(this).val();
+                }
+            })
+
+            if(usertype==""){
+                alert("请选择您的身份类型");
+                return false;
+            }
+
+            if(usertype!="xs"&&usertype!="jg"&&usertype!="uid"){
+                alert("请选择有效的身份类型");
+                return false;
+            }
+            */
+
+            var username = $("input[name='username']").val();
+            if (username == "") {
+                // alert("管理员/高校代码/注册账号)");
+                $(".login-i").css("backgroundPosition","0px -96px");
+                $(".pwd").css("backgroundPosition","-48px 0px");
+                $(".mes-back").html("请输入有效的管理员/高校代码/注册账号").insertAfter($(".login-i")[0]);
+                $("input[name='username']").focus();
+                return false;
+            }
+
+            var reg = /^[A-Za-z0-9]+$/;
+            if (!reg.test(username)) {
+                var reg2 = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/; //邮箱格式
+                if (!reg2.test(username)) {
+                    // alert("请输入有效的管理员/高校代码/注册账号");
+                    $(".login-i").css("backgroundPosition","0px -96px");
+                    $(".pwd").css("backgroundPosition","-48px 0px");
+                    $(".mes-back").html("请输入有效的管理员/高校代码/注册账号").insertAfter($(".login-i")[0]);
+                    $("input[name='username']").focus();
+                    return false;
+                }
+            }
+
+            var password = $("input[name='password']").val();
+            if (password == "") {
+                // alert("请输入用户密码(Password)");
+                $(".login-i").css("backgroundPosition","0px 0px");
+                $(".pwd").css("backgroundPosition","-48px -96px");
+                $(".mes-back").html("请输入用户密码(Password)").insertAfter($(".pwd"));
+                $("input[name='password']").focus();
+                return false;
+            }
+
+
+
+            $("input[name='password']").val($.base64.encode(password));
+        })
+    })
+
+
+    </script>
+</head>
+
+<body>
+    <!-- header -->
+    <!--  <div class="header">
+        <div class="headerb">
+            <div class="logo"></div>
+            <div class="headern">
+               湖北省2017年高校招生会议系统
+            </div>
+        </div>
+    </div> -->
+    <!-- header end -->
+    <!--loginbody -->
+    <div class="login clear">
+        <div class="login-left">
+        <h1>
+            湖北招生会议管理系统
+        </h1>
+
+        </div>
+        <form action="" name="form1" id="form1" method="post">
+            <div class="logins">
+                <div class="login-b">
+                    <div class="login-i">
+                        <input type="text" id="user_t" value="管理员/高校代码/注册账号" tabindex="2" style="color:#999;" />
+                        <input type="text" id="username" name="username" style="display: none;" tabindex="2" />
+                    </div>
+                    <div class="login-i pwd">
+                        <input type="text" style="color:#999;" id="pwd_t" value="请输入密码(Password)" tabindex="3" />
+                        <input type="password" id="password" name="password" style="display: none;" tabindex="3" />
+                    </div>
+                    <div class="login-a" id="login-a">
+                        <label for="login1" class="login1" style="font-size: 14px">
+                            <a href="" target="_blank">忘记登陆密码？</a>
+                        </label>
+                    </div>
+                    <!-- <div class="login-bn" onclick="$('#form1').submit();">登 录 sign in
+                    </div> -->
+                    <input class="login-bn" onclick="$('#form1').submit();"type="submit" value="登 录 sign in">
+                    <div class="mes-back"></div>
+
+                    <div class="book_6" id="go_cover">
+                        <a href="#">会议公告</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <p>
+            地址：湖北省武汉市青山区和平大道　邮政编码：430000　电话：15671592309 <span>&copy 2006-2015　<a target="_blank" href="https://github.com/wust-web">武汉科技大学web前端团队</a></span>
+        </p>
+    </div>
+    <!-- loginbody end -->
+    <script src="js/main.js" type="text/javascript"></script>
+    <div class="mask" style="z-index:999"></div>
+    <div class="pay2" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;background: #e8e8e8;border-radius: 6px;">
+        <div class="news-top">
+            <span class="gb pointer gb-new"></span>
+        </div>
+        <div class="news-body news-bodys" style="display: block;height: 360px;position: relative">
+            <div style="margin: 10px;">
+                <p style="line-height: 30px;margin: 10px;text-align: center;font-size:16px;color:#EF1959">信息公告
+                </p >
+                <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                请大家加入web团队,地址是：https://github.com/wust-web ， 注册GitHub账号，加入武汉科技大学web前端团队。
+                </p>
+                <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                </p>
+                <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
