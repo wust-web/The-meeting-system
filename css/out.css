@@ -1,0 +1,62 @@
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+select,
+textarea,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input,
+select,
+textarea {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+}
+label{font-size:14px;}
+.formWrap{width:976px;background:#FFF;border-radius:6px;position: relative;}
+.header{height:35px;background-color:#E8E8E8;border-radius:5px 5px 0 0;}
+.header h1{color:#000;font-size:16px;line-height:35px;text-indent:16px;}
+.formWrap .header .formGb{position: absolute;top:-2px;right:0px;}
+.pop-body{position:relative;background: #FFF;}
+#pop-form{padding:30px 16px 30px;}
+.pop-body label{display:inline-block;width:60px;height:27px;color:#333333;font-size:12px;line-height:27px;}
+.pop-left{width:50%;}
+.pop-left .wu,.wk,.pro,.idCode,.mob,.eml,.meeting,.formRow,.text{height:27px;width:309px;margin-bottom:15px;margin-right:0;}
+.pop-left .workName,.workUicode,.profession,.id-code,.mobile,.email,input[type="text"],.pop-right .role{border:1px solid #bbbcbd;height:25px;width:170px;padding:0 5px;}
+.pop-body .yescanhui,.pop-body .nocanhui{width:40px;}
+.imgUpload{display:inline-block;/*   border: 1px solid #bbbcbd;*/height:25px;width:170px;padding:0 5px;line-height:25px;}
+.pop-body input[type="file"]{position:absolute;top:0;left:0;width:180px;padding:0;outline:none;line-height:22px;background:none;/*  background: #eeeeee;*/border:none;height:25px;}
+.pop-right{width:50%;}
+.pop-body .biaojian,.pop-body .single,.pop-body .nozhushu{width:auto;padding-right:5px;}
+.form-btn{width:100%;text-align: center;background: #FFF;margin-top: 20px;}
+.form-btn .save-btn{width:80px;height:34px;margin-top: 40px;font-size:16px;line-height:34px;color:#fffbfb;background-color:#5886d3;border:none;text-align:center;border-radius:2px;cursor:pointer;}

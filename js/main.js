@@ -4,6 +4,111 @@
  * @date    2015-10-01 20:00:07
  * @version $Id$
  */
+$(function() {
+    // 退出系统
+    $("#quit").click(function() {
+        // alert( $("#quit"));
+        window.location.href = "login.html";
+    });
+
+    // 左侧主导航
+    //初始化，保存刷新前的信息。刷新后加载之前的状态
+    var cookie = {
+        "setCookie": function(name, value, iDay) {
+            var oDate = new Date();
+
+            oDate.setDate(oDate.getDate() + iDay);
+
+            document.cookie = name + '=' + value + ';expires=' + oDate;
+        },
+        "getCookie": function(name) {
+            //'username=abc; password=123456; aaa=123; bbb=4r4er'
+            var arr = document.cookie.split('; ');
+            var i = 0;
+
+            //arr->['username=abc', 'password=123456', ...]
+
+            for (i = 0; i < arr.length; i++) {
+                //arr2->['username', 'abc']
+                var arr2 = arr[i].split('=');
+
+                if (arr2[0] == name) {
+                    return arr2[1];
+                }
+            }
+
+            return '';
+        },
+        "removeCookie": function(name) {
+            setCookie(name, '1', -1);
+        }
+    };
+
+    $(window).bind('beforeunload', function() {
+        alert('您输入的内容尚未保存，确定离开此页面吗？');
+    });
+
+    // cookie.getCookie('currentShow').addClass("active");
+    // $(".info").css("display","block");
+    $("#navBar").find("li").click(function() {
+        $(this).addClass("active")
+            .siblings().removeClass();
+        $("#container").children().eq($(this).index()).css("display", "block")
+            .siblings().css("display", "none");
+        cookie.setCookie('currentShow',$(this),30);
+
+    });
+
+    // 页面刷新。这里应该是刷新表格
+    $("#sync").click(function() {
+        window.location.reload();
+    });
+
+    // 新增数据.弹出表单
+    // 关闭数据表单
+    $(".gb-new").click(function() {
+        $('.new').animate({
+            top: '-600px'
+        }, 500, function() {
+            $('.mask').hide()
+        });
+        $('.formWrap').animate({
+            top: '-600px'
+        }, 500, function() {
+            $('.mask').hide()
+        });
+    });
+
+    // 添加数据
+    $("#add,#edit").click(function() {
+        // alert($('.mask'));
+        $('.mask').show();
+        $('.formWrap').animate({
+            "top": "120px"
+        }, 500).show();
+    });
+
+    // 批量操作
+    $("#batchDel").click(function() {
+        $checked = $(".showData table tr td input:checked");
+        if ($checked.is(":checked")) {
+            $(".showData table tr td input:checked").parents("tr").remove();
+        } else {
+            // alert("请选择数据记录之后，再操作！");
+            $("<span>").html("请选择数据记录之后，再操作！").appendTo($(".control"));
+        }
+
+    });
+    // 删除数据
+    $("span[id='delete']").click(function() {
+        // alert( $(this).parents("tr").html());
+        $(this).parents("tr").remove();
+    });
+    // 修改数据
+
+
+
+});
 
 //通知
 $(function() {
