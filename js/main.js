@@ -55,7 +55,7 @@ $(function() {
             .siblings().removeClass();
         $("#container").children().eq($(this).index()).css("display", "block")
             .siblings().css("display", "none");
-        cookie.setCookie('currentShow',$(this),30);
+        // cookie.setCookie('currentShow',$(this),30);
 
     });
 
@@ -94,8 +94,8 @@ $(function() {
         if ($checked.is(":checked")) {
             $(".showData table tr td input:checked").parents("tr").remove();
         } else {
-            // alert("请选择数据记录之后，再操作！");
-            $("<span>").html("请选择数据记录之后，再操作！").appendTo($(".control"));
+            alert("请选择数据记录之后，再操作！");
+            // $("<span>").html("请选择数据记录之后，再操作！").appendTo($(".control"));
         }
 
     });
@@ -180,3 +180,20 @@ $(window).resize(function() {
     var lh = $(window).height()
     $('.l-h').height(lh)
 });
+
+
+
+
+/*----------------------------------------------------------------------------------------------*/
+// 管理系统
+$(function() {
+    // 二级页面的切换
+    $("#secondTab,#secondTabMeet").find("h3").click(function() {
+        $(this).addClass("mlTab")
+            .siblings().removeClass("mlTab");
+        $(this).parent().siblings("#showData").eq($(this).index()).css("display", "block")
+            .siblings("#showData").css("display", "none");
+        // cookie.setCookie('currentShow',$(this),30);
+
+    });
+})
