@@ -53,6 +53,15 @@
             </div>
             <p class="statement">信息公告：您可以通过公告查看系统使用说明，并且查看会议规划和安排，请及时关注</p>
             <p class="statement">信息维护：可以添加不定数目的工作人员信息和高校或者单位具体信息，请确保信息准确，以便主办方统计信息。</p>
+            <p>
+                登陆入口：<a style="color:#FF4200" href="http://wust-web.github.io/The-meeting-system/login.html">http://wust-web.github.io/The-meeting-system/login.html</a>
+            </p>
+            <p >
+                用户端入口：<a style="color:#FF4200" href="http://wust-web.github.io/The-meeting-system/">http://wust-web.github.io/The-meeting-system/</a>
+            </p>
+            <p >
+                管理员端入口：<a style="color:#FF4200" href="http://wust-web.github.io/The-meeting-system/manage.html">http://wust-web.github.io/The-meeting-system/manage.html</a>
+            </p>
             <div class="infoList">
                 <ol>
                     <li><a href="">会议系统告知</a> <span id="infoTime">2015-10-03</span></li>
@@ -230,90 +239,74 @@
         </div>
         <!-- /工作人员管理 -->
         <!-- 单位信息维护 -->
-        <div class="unitManage" style="display:none;">
+        <div class="unitManage" style="display: none;">
             <div class="pulicTit">
                 <h3>单位信息维护</h3>
             </div>
-            <div class="formWrap" id="wrapall" style="width:100%;">
+            <div class="formWrap unit" id="wrapall" style="width:100%;">
                 <div class="header" style="background:#F7F7F7">
-                    <h1>新增高校工作人员</h1>
+                    <h1>新增单位信息</h1>
                 </div>
-                <div class="pop-body" id="popup">
+                <div class="pop-body pop-body-op" id="popup">
                     <form action="" id="pop-form" class="clear" method="get">
                         <div class="pop-left fl">
                             <div class="wk">
-                                <label for="username">单位名称 :</label>
-                                <input type="text" value="" name=" " class="workName" id="username" />
+                                <label for="username">用户名 :</label>
+                                <input type="text" value="" name="" placeholder="单位的国标代码" autofocus class="username" id="username" required />
                             </div>
-                            <div class="wu">
-                                <label for="workUicode">单位编码 :</label>
-                                <input type="text" value="" name="" id="workUicode" class="workUicode" />
+
+                            <div class="formRow">
+                                <label for="unitName">单位名称 :</label>
+                                <input type="text" value="" name="" id="unitName" class="unitName" placeholder="单位的全称" required />
                             </div>
-                            <div class="pro">
-                                <label for="profession">职务 :</label>
-                                <input type="text" value="" name="" id="profession" class="profession" />
+                            <div class="formRow">
+                                <label for="deparment">部门名称 :</label>
+                                <input type="text" value="" name="" id="deparment" class="deparment" placeholder="部门的全称" />
                             </div>
-                            <div class="idCode">
-                                <label for="id-code">身份证号 :</label>
-                                <input type="text" value="" name="" id="id-code" class="id-code" />
+                            <div class="formRow">
+                                <label for="postal">邮政编码 :</label>
+                                <input type="text" value="" name="" id="postal" class="postal" />
                             </div>
-                            <div class="mob">
-                                <label for="mobile">手机 :</label>
-                                <input type="text" value="" name="" id="mobile" class="mobile" />
+                            <div class="formRow">
+                                <label for="unitTel">办公电话 :</label>
+                                <input type="text" value="" name="" id="unitTel" class="unitTel" />
                             </div>
-                            <div class="eml">
-                                <label for="email">Email :</label>
-                                <input type="text" value="" name="" id="email" class="email" />
+                            <div class="formRow">
+                                <label for="fax">传真 :</label>
+                                <input type="text" value="" name="" id="fax" class="fax" />
                             </div>
-                            <div class="meeting">
-                                <label>是否参会 :</label>
-                                <input type="radio" value="" name="meeting" id="yescanhui" name="options" class="meeting-yes" />
-                                <label for="yescanhui" class="yescanhui">是</label>
-                                <input type="radio" value="" name="meeting" id="nocanhui" name="options" class="meeting-no" />
-                                <label for="nocanhui" class="nocanhui">否</label>
-                            </div>
+
                         </div>
                         <div class="pop-right fr">
                             <div class="formRow">
-                                <label for="">姓名 :</label>
-                                <input type="text" value="" name="" id="" class="user" />
+                                <label for="workUicode">密码 :</label>
+                                <input type="password" value="" name="" id="workUicode" class="workUicode" placeholder="登陆密码/用户密码" required />
                             </div>
                             <div class="formRow">
-                                <label for="">电话 :</label>
-                                <input type="text" value="" name="" id="" class="tel" />
+                                <label for="guoCode">国标代码 :</label>
+                                <input type="text" value="" name="" id="" class="guoCode" placeholder="单位的国标代码" />
                             </div>
                             <div class="formRow">
-                                <label for="">QQ :</label>
-                                <input type="text" value="" name="" id="" class="qq" />
+                                <label for="linkMan">联系人 :</label>
+                                <input type="text" value="" name="" id="linkMan" class="linkMan" placeholder="单位联系人" />
                             </div>
                             <div class="formRow">
-                                <label for="" style="vertical-align: super">照片 :</label>
-                                <span class="imgUpload" style="position: relative;">
-                                    <input type="file" value="上传文件" name="" id="" name="file" id="file" />
-                                </span>
+                                <label for="linkTel">联系电话 :</label>
+                                <input type="text" value="" name="" id="linkTel" class="linkTel" />
                             </div>
+
                             <div class="formRow">
-                                <label for="sex">性别 :</label>
-                                <input type="radio" value="" name="sex" class="man" id="man" />
-                                <label for="man" class="yescanhui">男</label>
-                                <input type="radio" value="" name="sex" class="meeting-no" id="women" />
-                                <label for="women" class="nocanhui">女</label>
-                            </div>
-                            <div class="formRow">
-                                <label for="">住宿:</label>
-                                <input type="radio" value="" name="same" id="biaojian" name="same" class="" />
-                                <label for="biaojian" class="biaojian">标准间</label>
-                                <input type="radio" value="" id="single" name="same" class="">
-                                <label for="single" class="single">单人间</label>
-                                <input type="radio" value="" id="nozushu" name="same" class="">
-                                <label for="nozushu" class="nozhushu">不安排</label>
-                            </div>
-                            <div class="formRow">
-                                <label for="role">角色 :</label>
+                                <label for="role">用户角色 :</label>
                                 <input type="radio" value="" name="role" id="functionary" class="functionary" />
                                 <label for="functionary" class="functionary">负责人员</label>
                                 <input type="radio" value="" name="role" class="entourage" id="entourage" />
                                 <label for="entourage" class="entourage">随行人员</label>
+                            </div>
+                            <div class="formRow">
+                                <label for="userLock">用户锁定 :</label>
+                                <input type="checkbox" value="" name="role" id="userLock" class="userLock" />
+                                <label for="userLock" class="userLock">未锁定</label>
+
                             </div>
                         </div>
                         <div class="form-btn">
@@ -335,20 +328,25 @@
                     <p style="line-height: 30px;margin: 10px;text-align: center;font-size:16px;color:#EF1959">信息公告
                     </p>
                     <p style="line-height: 30px;margin: 10px;text-indent:2em">
-                        请大家加入web团队,地址是：https://github.com/wust-web ， 注册GitHub账号，加入武汉科技大学web前端团队。
+                        请大家加入web团队,地址是：<a href="https://github.com/wust-web">https://github.com/wust-web</a>， 注册GitHub账号，加入武汉科技大学web前端团队。
                     </p>
                     <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                        <a href="http://wust-web.github.io/The-meeting-system/login.html">登陆入口：</a>
                     </p>
                     <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                        <a href="http://wust-web.github.io/The-meeting-system/">用户端入口：</a>
+                    </p>
+                    <p style="line-height: 30px;margin: 10px;text-indent:2em">
+                        <a href="http://wust-web.github.io/The-meeting-system/manage.html">管理员端入口：</a>
                     </p>
                 </div>
             </div>
         </div>
         <!--  /增加信息弹出表单 -->
         <!-- 增加表单信息 -->
-        <div class="formWrap" id="wrapall" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;border-radius: 6px;">
+        <div class="formWrap formAlert" id="wrapall" style="width: 680px;height: 468px;position: absolute;left:50%;margin-left:-340px;top: -600px;z-index: 1000;border-radius: 6px;">
             <div class="header">
-                <h1>新增高校工作人员</h1><span class="gb pointer gb-new formGb"></span>
+                <h1 style="text-indent: 31px">新增单位工作人员</h1><span class="gb pointer gb-new formGb"></span>
             </div>
             <div class="pop-body" id="popup">
                 <form action="" id="pop-form" class="clear" method="get">
@@ -357,25 +355,27 @@
                             <label for="username">单位名称 :</label>
                             <input type="text" value="" name=" " class="workName" id="username" />
                         </div>
-                        <div class="wu">
-                            <label for="workUicode">单位编码 :</label>
-                            <input type="text" value="" name="" id="workUicode" class="workUicode" />
+                        <div class="formRow">
+                            <label for="">姓名 :</label>
+                            <input type="text" value="" name="" id="" class="user" />
                         </div>
-                        <div class="pro">
-                            <label for="profession">职务 :</label>
-                            <input type="text" value="" name="" id="profession" class="profession" />
-                        </div>
-                        <div class="idCode">
+                       <div class="idCode">
                             <label for="id-code">身份证号 :</label>
                             <input type="text" value="" name="" id="id-code" class="id-code" />
                         </div>
+                         <div class="formRow">
+                            <label for="">办公电话 :</label>
+                            <input type="text" value="" name="" id="" class="tel" />
+                        </div>
+
+
                         <div class="mob">
                             <label for="mobile">手机 :</label>
                             <input type="text" value="" name="" id="mobile" class="mobile" />
                         </div>
                         <div class="eml">
                             <label for="email">Email :</label>
-                            <input type="text" value="" name="" id="email" class="email" />
+                            <input type="text" value="" name="" id="email" class="email" placeholder="单位邮箱example@123.com" />
                         </div>
                         <div class="meeting">
                             <label>是否参会 :</label>
@@ -386,14 +386,22 @@
                         </div>
                     </div>
                     <div class="pop-right fr">
-                        <div class="formRow">
-                            <label for="">姓名 :</label>
-                            <input type="text" value="" name="" id="" class="user" />
+                        <div class="wu" style="margin-bottom: 15px;">
+                            <label for="workUicode">单位编码 :</label>
+                            <input type="text" value="" name="" id="workUicode" class="workUicode" />
                         </div>
                         <div class="formRow">
-                            <label for="">电话 :</label>
-                            <input type="text" value="" name="" id="" class="tel" />
+                            <label for="sex">性别 :</label>
+                            <input type="radio" value="" name="sex" class="man" id="man" />
+                            <label for="man" class="yescanhui">男</label>
+                            <input type="radio" value="" name="sex" class="meeting-no" id="women" />
+                            <label for="women" class="nocanhui">女</label>
                         </div>
+                        <div class="pro">
+                            <label for="profession">职务 :</label>
+                            <input type="text" value="" name="" id="profession" class="profession" />
+                        </div>
+
                         <div class="formRow">
                             <label for="">QQ :</label>
                             <input type="text" value="" name="" id="" class="qq" />
@@ -404,13 +412,7 @@
                                 <input type="file" value="上传文件" name="" id="" name="file" id="file" />
                             </span>
                         </div>
-                        <div class="formRow">
-                            <label for="sex">性别 :</label>
-                            <input type="radio" value="" name="sex" class="man" id="man" />
-                            <label for="man" class="yescanhui">男</label>
-                            <input type="radio" value="" name="sex" class="meeting-no" id="women" />
-                            <label for="women" class="nocanhui">女</label>
-                        </div>
+
                         <div class="formRow">
                             <label for="">住宿:</label>
                             <input type="radio" value="" name="same" id="biaojian" name="same" class="" />

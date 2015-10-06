@@ -72,7 +72,7 @@ $(function() {
         }, 500, function() {
             $('.mask').hide()
         });
-        $('.formWrap').animate({
+        $('.formAlert').animate({
             top: '-600px'
         }, 500, function() {
             $('.mask').hide()
@@ -83,7 +83,7 @@ $(function() {
     $("#addAd,#edit,#add").click(function() {
         // alert($('.mask'));
         $('.mask').show();
-        $('.formWrap').animate({
+        $('.formAlert').animate({
             "top": "120px"
         }, 500).show();
     });
