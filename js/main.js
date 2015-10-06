@@ -80,7 +80,7 @@ $(function() {
     });
 
     // 添加数据
-    $("#addAd,#edit").click(function() {
+    $("#addAd,#edit,#add").click(function() {
         // alert($('.mask'));
         $('.mask').show();
         $('.formWrap').animate({
