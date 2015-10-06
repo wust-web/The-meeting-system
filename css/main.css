@@ -43,15 +43,23 @@ body{background:#F7F7F7;}
 #container .infoList{margin-top:20px;line-height:35px;}
 #container .info li{list-style:decimal;list-style-position:inside;}
 #infoTime{margin-left:20px;font:100 13px "Monaco";color:#A6E22E;}
+.infoDetail{/*background: #FFF;*/width: 100%;font:14px "宋体，Monaco";}
+.infoDetail h4{color:#FF4200;text-align: center;height:40px;line-height: 40px;font-size: 14px;font-family: "Microsoft YaHei";}
+
+.infoDetail p{text-indent: 2em;margin-top: 10px;padding-right: 30px;line-height: 2;}
+
+.control{height:45px;font:13px "Microsoft YaHei";padding-right:20px;}
 .add,.sync,.export,.batchDel,.lockNum,.allChe,.invert,.noReg,.allUnit,.aRegister,.addAd{height:30px;line-height:30px;margin-right:5px;border-radius:3px;text-align:center;border:none;background:none;color:#FFF;font-size:14px;}
 .add,.sync,.allChe,.invert{background:#5785D4;padding:0 20px;}
-.noReg,.aRegister{padding:0 10px;}
+.noReg,.aRegister{padding:0 15px;}
+.noReg,.aRegister,.allUnit{opacity: 0.3}
 .addAd,.aRegister{background: #5785D4;}
+.control .unitOpacity{opacity:1;/*color:#000;*/}
 .allChe,.allUnit{background: #A6E22E;}
 .export,.lockNum,.noReg{background:#FF4200;}
 .batchDel{background:#A6E22E;}
 .sync{background:#A6E22E;}
-.control{height:45px;font:13px "Microsoft YaHei";padding-right:20px;}
+
 .showData{padding-right:30px;overflow:hidden;}
 .showData table{width:100%;margin:0 auto;font:13px "Microsoft YaHei";text-align:center;border:1px solid #A6E22E;border-collapse:collapse;}
 table tr{height:40px;background:#FFF;}

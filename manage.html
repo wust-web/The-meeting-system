@@ -54,149 +54,162 @@
             <div class="pulicTit">
                 <h3 class="ml">信息管理</h3>
             </div>
-            <div class="control">
-                <button id="addAd" class="addAd">添加公告</button>
-            </div>
-            <div id="showData" class="showData">
-                <table border='1' cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>操作</th>
-                            <th>文章标题</th>
-                            <th>点击量</th>
-                            <th>责任编辑</th>
-                            <th>发布时间</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="" id="" />
-                                <span id="delete">[删除]</span>
-                                <span id="edit">[编辑]</span>
-                            </td>
-                            <td><a href="" title="点击查看">会议系统说明</a></td>
-                            <td>193</td>
-                            <td>小王</td>
-                            <td>2015-10-05-09：54：03</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <!-- 分页 -->
-            <div class="pages ">
-                <div class="pageCont clear">
-                    <p class="result fl">
-                        共<span id="jiluNum">1</span>条记录。每页显示<span>8</span>条，共<span id="pageNum">1</span>页，当前第<span id="nowNum">1</span>页
-                    </p>
-                    <div class="page-normal fl">
-                        <a class="firstPage"><span>首页</span></a>
-                        <a class="page-prev"><span>&lt;</span></a>
-                        <a class="page-current"><span>1</span></a>
-                        <a href="#"><span>2</span></a>
-                        <a href="#"><span>3</span></a>
-                        <a href="#"><span>4</span></a>
-                        <a href="#"><span>5</span></a>
-                        <a href="#"><span>6</span></a>
-                        <a href="#"><span>7</span></a>
-                        <span id="ellipsis">...</span>
-                        <a href="#"><span>199</span></a>
-                        <a href="#"><span>200</span></a>
-                        <a href="#" class="page-next"><span>&gt;</span></a>
-                        <a href="#" class="lastPage"><span>末页</span></a>
+            <div id="infoPub"class="infoPub" style="display:block">
+                <div class="control">
+                    <button id="addAd" class="addAd">添加公告</button>
+                </div>
+                <div id="showData" class="showData">
+                    <table border='1' cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>操作</th>
+                                <th>文章标题</th>
+                                <th>点击量</th>
+                                <th>责任编辑</th>
+                                <th>发布时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="" id="" />
+                                    <span id="delete">[删除]</span>
+                                    <span id="edit">[编辑]</span>
+                                </td>
+                                <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
+                                <td>193</td>
+                                <td>小王</td>
+                                <td>2015-10-05-09：54：03</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 分页 -->
+                <div class="pages ">
+                    <div class="pageCont clear">
+                        <p class="result fl">
+                            共<span id="jiluNum">1</span>条记录。每页显示<span>8</span>条，共<span id="pageNum">1</span>页，当前第<span id="nowNum">1</span>页
+                        </p>
+                        <div class="page-normal fl">
+                            <a class="firstPage"><span>首页</span></a>
+                            <a class="page-prev"><span>&lt;</span></a>
+                            <a class="page-current"><span>1</span></a>
+                            <a href="#"><span>2</span></a>
+                            <a href="#"><span>3</span></a>
+                            <a href="#"><span>4</span></a>
+                            <a href="#"><span>5</span></a>
+                            <a href="#"><span>6</span></a>
+                            <a href="#"><span>7</span></a>
+                            <span id="ellipsis">...</span>
+                            <a href="#"><span>199</span></a>
+                            <a href="#"><span>200</span></a>
+                            <a href="#" class="page-next"><span>&gt;</span></a>
+                            <a href="#" class="lastPage"><span>末页</span></a>
+                        </div>
                     </div>
                 </div>
+                <!-- /分页 -->
             </div>
+
+            <!-- 公告详细详细容器 -->
+            <div id="infoDetail"class="infoDetail" style="display:none">
+                <h4>系统说明</h4>
+                <div class="infoBody">
+                    <p>本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。</p>
+                    <p>系统开发的语言有HTML，CSS,javascript,jQuery等前端语言</p>
+                    <p>系统开发成员是来自武汉科技大学管理学院的web前端开发团队，团队地址是
+                    <a href="https://github.com/wust-web"style="color:#ff4200">武汉科技大学Web前端开发团队</a></p>
+                </div>
+            </div>
+            <!-- /公告详细详细容器 -->
         </div>
         <!-- /信息公告 -->
         <!-- 用户管理 -->
@@ -239,7 +252,6 @@
                             <td>处长</td>
                             <td>否</td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -247,7 +259,7 @@
                 <table border='1' cellspacing="0">
                     <thead>
                         <tr>
-                            <th>普通用户</th>
+                            <th>操作</th>
                             <th>用户名</th>
                             <th>姓名</th>
                             <th>创建时间</th>
@@ -264,18 +276,16 @@
                                 <span id="delete">[删除]</span>
                                 <span id="edit">[编辑]</span>
                             </td>
-                            <td>小王</td>
-                            <td>王某某</td>
+                            <td>kay</td>
+                            <td>kaychen</td>
                             <td>2015-10-04-10:03:04</td>
-                            <td>是</td>
-                            <td>处长</td>
                             <td>否</td>
+                            <td>处长</td>
+                            <td>是</td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
-
             <!-- 分页 -->
             <div class="pages ">
                 <div class="pageCont clear">
@@ -308,12 +318,15 @@
                 <h3 class="mlTab">已登记信息单位</h3>
                 <h3>参会人员统计</h3>
             </div>
-            <div class="control">
-                <button id="allUnit" class="allUnit">全部单位</button>
+            <div class="control" id="unitBtn">
+                <button id="allUnit" class="allUnit unitOpacity">全部单位</button>
                 <button id="aRegister" class="aRegister">已登记</button>
                 <button id="noReg" class="noReg">未登记</button>
                 <span>共有单位<span id="totalNum" class="totalNum">56</span>所。已经登记<span id="alredyNum" class="alredyNum">8</span>所，共未登记<span id="noRegiNum" class="noRegiNum">1</span>所。</span>
             </div>
+            <!-- 单位信息汇总 -->
+            <!-- 这里会产生三级页面，方式是拿到数据后根据条件在进一步筛选，
+            将数据填充在现在的表格容器内 -->
             <div id="showData" class="showData" style="display:block">
                 <table border='1' cellspacing="0">
                     <thead>
@@ -339,15 +352,16 @@
                             <td>13455766890</td>
                             <td>13455766890</td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
-             <div id="showData" class="showData" style="display:none">
+            <!-- /单位信息汇总 -->
+            <!-- 参会人员统计 -->
+            <div id="showData" class="showData" style="display:none">
                 <table border='1' cellspacing="0">
                     <thead>
                         <tr>
-                            <th>参会人员管理</th>
+                            <th>单位名称</th>
                             <th>国标代码</th>
                             <th>单位性质</th>
                             <th>办公电话</th>
@@ -359,24 +373,24 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>武汉科技大学</td>
-                            <td>4233202</td>
-                            <td>院办</td>
+                            <td>华中科技大学</td>
+                            <td>47386434</td>
+                            <td>省部</td>
                             <td>027-67544567</td>
-                            <td>武科大招办处</td>
+                            <td>华科大就业处</td>
                             <td>小王</td>
                             <td>13455766890</td>
                             <td>13455766890</td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
+            <!-- /参会人员统计 -->
             <!-- 分页 -->
             <div class="pages ">
                 <div class="pageCont clear">
                     <p class="result fl">
-                    共<span id="jiluNum">1</span>条记录。每页显示<span id="totalNum" class="totalNum">8</span>条，共<span id="pageNum" class="pageNum">1</span>页，当前第<span id="nowNum" class="nowNum">1</span>页
+                        共<span id="jiluNum">1</span>条记录。每页显示<span id="totalNum" class="totalNum">8</span>条，共<span id="pageNum" class="pageNum">1</span>页，当前第<span id="nowNum" class="nowNum">1</span>页
                     </p>
                     <div class="page-normal fl">
                         <a class="firstPage"><span>首页</span></a>
@@ -408,7 +422,7 @@
                 <button id="invert" class="invert">反选</button>
                 <button id="export" class="export">批量导出</button>
             </div>
-            <div id="showData" class="showData">
+            <div id="showData" class="showData rizhi">
                 <table border='1' cellspacing="0">
                     <thead>
                         <tr>
@@ -527,7 +541,6 @@
                             <td>王某某</td>
                             <td>424324562004284829</td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -557,7 +570,6 @@
             </div>
         </div>
         <!-- /日志查询 -->
-
         <!--  增加信息弹出表单 -->
         <div class="mask" style="z-index:999"></div>
         <div class="pay2" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;background: #e8e8e8;border-radius: 6px;">
@@ -670,7 +682,7 @@
         </div>
         <!-- /增加表单信息 -->
     </div>
-    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 

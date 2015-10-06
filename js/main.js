@@ -80,7 +80,7 @@ $(function() {
     });
 
     // 添加数据
-    $("#add,#edit").click(function() {
+    $("#addAd,#edit").click(function() {
         // alert($('.mask'));
         $('.mask').show();
         $('.formWrap').animate({
@@ -110,7 +110,7 @@ $(function() {
 
 });
 
-//通知
+//通知弹窗的实现
 $(function() {
     $(".gb-new").click(function() {
         $('.new').animate({
@@ -195,5 +195,68 @@ $(function() {
             .siblings("#showData").css("display", "none");
         // cookie.setCookie('currentShow',$(this),30);
 
+    });
+    // 三级页面的切换
+    $("#unitBtn").find("button").click(function() {
+        $(this).addClass("unitOpacity")
+            .siblings("button").removeClass("unitOpacity");
+        /* $(this).parent().siblings("#showData").eq($(this).index()).css("display","block")
+             .siblings("#showData").css("display", "none");*/
+        // cookie.setCookie('currentShow',$(this),30);
+
+    });
+
+    // 用户公告的一些功能
+    // 历史记录管理(有问题，并没有解决)
+    show();
+
+    function show() {
+        $("#goDetail").click(function() {
+            $(this).attr({
+                "data-hash": $(this).index(),
+                "href": "javascript:;"
+            });
+
+            var $hash = $(this).data("hash");
+            window.location.hash = $hash;
+            $("#infoDetail").attr("data-detail", $hash);
+            // alert($("#infoDetail").data("detail"));
+            if ($("#infoDetail").data("detail") == $hash) {
+                $("#infoPub").css("display", "none").next("#infoDetail").css("display", "block");
+            } else {
+                $("#infoPub").css("display", "block").next("#infoDetail").css("display", "none");
+            };
+            return false;
+        });
+    };
+
+    window.onhashchange = function() {
+        //监听hash值的
+        showHash();
+    };
+    showHash();
+
+    function showHash() {
+        var $hash = window.location.hash.substring(1);
+        if ($("#infoDetail").data("detail") == $hash) {
+            $("#infoPub").css("display", "none").next("#infoDetail").css("display", "block");
+        } else {
+            $("#infoPub").css("display", "block").next("#infoDetail").css("display", "none");
+        };
+    };
+
+
+    // 日志查询
+
+    // 全选
+    $("#allChe").click(function() {
+        // alert($("#showData").find("table tr td input:checkbox"));
+        $(".rizhi").find("input:checkbox").attr('checked',true);
+    });
+    $("#invert").click(function() {
+        // alert($("#showData").find("table tr td input:checkbox"));
+        $(".rizhi").find("input:checkbox").each(function() {
+            this.checked=!this.checked;
+        });
     });
 })
