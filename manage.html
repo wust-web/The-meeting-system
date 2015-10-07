@@ -54,7 +54,7 @@
             <div class="pulicTit">
                 <h3 class="ml">信息管理</h3>
             </div>
-            <div id="infoPub"class="infoPub" style="display:block">
+            <div id="infoPub" class="infoPub" style="display:block">
                 <div class="control">
                     <button id="addAd" class="addAd">添加公告</button>
                 </div>
@@ -89,7 +89,7 @@
                                 </td>
                                 <td><a href="" title="点击查看" id="goDetail">会议系统说明</a></td>
                                 <td>193</td>
-                                <td>小王</td>
+                                <td>10788</td>
                                 <td>2015-10-05-09：54：03</td>
                             </tr>
                             <tr>
@@ -198,15 +198,14 @@
                 </div>
                 <!-- /分页 -->
             </div>
-
             <!-- 公告详细详细容器 -->
-            <div id="infoDetail"class="infoDetail" style="display:none">
+            <div id="infoDetail" class="infoDetail" style="display:none">
                 <h4>系统说明</h4>
                 <div class="infoBody">
                     <p>本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。本系统由用户系统和管理员系统组成。其中管理员系统由湖北省会议主办方来管理，用户是湖北省各高校和省招办单位和杂志社。</p>
                     <p>系统开发的语言有HTML，CSS,javascript,jQuery等前端语言</p>
                     <p>系统开发成员是来自武汉科技大学管理学院的web前端开发团队，团队地址是
-                    <a href="https://github.com/wust-web"style="color:#ff4200">武汉科技大学Web前端开发团队</a></p>
+                        <a href="https://github.com/wust-web" style="color:#ff4200">武汉科技大学Web前端开发团队</a></p>
                 </div>
             </div>
             <!-- /公告详细详细容器 -->
@@ -216,7 +215,8 @@
         <div class="systemM" style="display: none;">
             <div id="secondTab" class="pulicTit">
                 <h3 class="mlTab">管理员</h3>
-                <h3>普通用户</h3>
+                <h3>单位用户</h3>
+                <h3>单位工作人员</h3>
             </div>
             <div class="control">
                 <button id="add" class="add">新增</button>
@@ -286,6 +286,35 @@
                     </tbody>
                 </table>
             </div>
+            <div id="showData" class="showData" style="display:none">
+                <table border='1' cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>操作</th>
+                            <th>用户名</th>
+                            <th>单位名称</th>
+                            <th>国标代码</th>
+                            <th>锁定</th>
+                            <th>创建者</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="" id="" />
+                                <span id="lock">[锁定]</span>
+                                <span id="delete">[删除]</span>
+                                <span id="edit">[编辑]</span>
+                            </td>
+                            <td>kay</td>
+                            <td>武汉科技大学</td>
+                            <td>634832</td>
+                            <td>否</td>
+                            <td>处长</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <!-- 分页 -->
             <div class="pages ">
                 <div class="pageCont clear">
@@ -318,11 +347,22 @@
                 <h3 class="mlTab">已登记信息单位</h3>
                 <h3>参会人员统计</h3>
             </div>
-            <div class="control" id="unitBtn">
+            <div class="control unitCtrl" id="unitBtn" style="display: block;">
                 <button id="allUnit" class="allUnit unitOpacity">全部单位</button>
                 <button id="aRegister" class="aRegister">已登记</button>
                 <button id="noReg" class="noReg">未登记</button>
+                <button id="export" class="export">批量导出</button>
                 <span>共有单位<span id="totalNum" class="totalNum">56</span>所。已经登记<span id="alredyNum" class="alredyNum">8</span>所，共未登记<span id="noRegiNum" class="noRegiNum">1</span>所。</span>
+            </div>
+            <div class="control workerCtrl" id="unitBtn" style="display:none;">
+                <button id="workerAll" class="workerAll unitOpacity">显示全部</button>
+                <button id="asUnit" class="asUnit">按单位</button>
+                <button id="export" class="export">批量导出</button>
+                <span>共登记工作人员<span id="totalNum" class="totalNum">56</span>人。确认参会<span id="alredyNum" class="alredyNum">8</span>人，未确认参会<span id="noRegiNum" class="noRegiNum">1</span>所。</span>
+                <form action="" method="get" name="" id="unitForm">
+                    <input type="search" name="unitSearch" id="unitS" placeholder="请输入单位名称" />
+                    <input type="submit" value="搜索" id="sureSearch" />
+                </form>
             </div>
             <!-- 单位信息汇总 -->
             <!-- 这里会产生三级页面，方式是拿到数据后根据条件在进一步筛选，
@@ -358,32 +398,179 @@
             <!-- /单位信息汇总 -->
             <!-- 参会人员统计 -->
             <div id="showData" class="showData" style="display:none">
-                <table border='1' cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>单位名称</th>
-                            <th>国标代码</th>
-                            <th>单位性质</th>
-                            <th>办公电话</th>
-                            <th>部门名称</th>
-                            <th>联系人</th>
-                            <th>电话</th>
-                            <th>传真</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>华中科技大学</td>
-                            <td>47386434</td>
-                            <td>省部</td>
-                            <td>027-67544567</td>
-                            <td>华科大就业处</td>
-                            <td>小王</td>
-                            <td>13455766890</td>
-                            <td>13455766890</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="attend">
+                    <div class="people clear">
+                        <div class="imgContainer fl">
+                            <img class="" src="" alt="照片尺寸是一寸" />
+                        </div>
+                        <div class="attend-info fl">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>所属单位：</dt>
+                                        <dd>武汉科技大学<span class="guobiao">(364783)</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>姓名：</dt>
+                                        <dd>kaychen</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>职位：</dt>
+                                        <dd>处长</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>性别：</dt>
+                                        <dd>男</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>身份证号：</dt>
+                                        <dd>424823654836758934</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>办公电话：</dt>
+                                        <dd>24235435465</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>手机：</dt>
+                                        <dd>2482354783</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>QQ：</dt>
+                                        <dd>132197342894</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>Email：</dt>
+                                        <dd>1232763427@gmail.com</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>是否参会：</dt>
+                                        <dd>是</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>是否发言：</dt>
+                                        <dd>否</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="people clear">
+                        <div class="imgContainer fl">
+                            <img class="" src="" alt="照片尺寸是一寸" />
+                        </div>
+                        <div class="attend-info fl">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>所属单位：</dt>
+                                        <dd>武汉科技大学<span class="guobiao">(364783)</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>姓名：</dt>
+                                        <dd>kaychen</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>职位：</dt>
+                                        <dd>处长</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>性别：</dt>
+                                        <dd>男</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>身份证号：</dt>
+                                        <dd>424823654836758934</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>办公电话：</dt>
+                                        <dd>24235435465</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>手机：</dt>
+                                        <dd>2482354783</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>QQ：</dt>
+                                        <dd>132197342894</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>Email：</dt>
+                                        <dd>1232763427@gmail.com</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>是否参会：</dt>
+                                        <dd>是</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>是否发言：</dt>
+                                        <dd>否</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="people clear">
+                        <div class="imgContainer fl">
+                            <img class="" src="" alt="照片尺寸是一寸" />
+                        </div>
+                        <div class="attend-info fl">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>所属单位：</dt>
+                                        <dd>武汉科技大学<span class="guobiao">(364783)</span></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>姓名：</dt>
+                                        <dd>kaychen</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>职位：</dt>
+                                        <dd>处长</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>性别：</dt>
+                                        <dd>男</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>身份证号：</dt>
+                                        <dd>424823654836758934</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>办公电话：</dt>
+                                        <dd>24235435465</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>手机：</dt>
+                                        <dd>2482354783</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>QQ：</dt>
+                                        <dd>132197342894</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>Email：</dt>
+                                        <dd>1232763427@gmail.com</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>是否参会：</dt>
+                                        <dd>是</dd>
+                                        <span class="fenge2">|</span>
+                                        <dt>是否发言：</dt>
+                                        <dd>否</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- /参会人员统计 -->
             <!-- 分页 -->
@@ -445,7 +632,7 @@
                             <td>登录日志</td>
                             <td>2015-10-05-09:05:94</td>
                             <td>普通用户</td>
-                            <td>小王</td>
+                            <td>10788</td>
                             <td>武汉科技大学</td>
                             <td>王某某</td>
                             <td>424324562004284829</td>
@@ -458,7 +645,7 @@
                             <td>登录日志</td>
                             <td>2015-10-05-09:05:94</td>
                             <td>普通用户</td>
-                            <td>小王</td>
+                            <td>10788</td>
                             <td>武汉科技大学</td>
                             <td>王某某</td>
                             <td>424324562004284829</td>
@@ -471,7 +658,7 @@
                             <td>登录日志</td>
                             <td>2015-10-05-09:05:94</td>
                             <td>普通用户</td>
-                            <td>小王</td>
+                            <td>10788</td>
                             <td>武汉科技大学</td>
                             <td>王某某</td>
                             <td>424324562004284829</td>
@@ -484,7 +671,7 @@
                             <td>登录日志</td>
                             <td>2015-10-05-09:05:94</td>
                             <td>普通用户</td>
-                            <td>小王</td>
+                            <td>10788</td>
                             <td>武汉科技大学</td>
                             <td>王某某</td>
                             <td>424324562004284829</td>
@@ -497,7 +684,7 @@
                             <td>登录日志</td>
                             <td>2015-10-05-09:05:94</td>
                             <td>普通用户</td>
-                            <td>小王</td>
+                            <td>10788</td>
                             <td>武汉科技大学</td>
                             <td>王某某</td>
                             <td>424324562004284829</td>
@@ -510,7 +697,7 @@
                             <td>登录日志</td>
                             <td>2015-10-05-09:05:94</td>
                             <td>普通用户</td>
-                            <td>小王</td>
+                            <td>10788</td>
                             <td>武汉科技大学</td>
                             <td>王某某</td>
                             <td>424324562004284829</td>
@@ -523,7 +710,7 @@
                             <td>登录日志</td>
                             <td>2015-10-05-09:05:94</td>
                             <td>普通用户</td>
-                            <td>小王</td>
+                            <td>10788</td>
                             <td>武汉科技大学</td>
                             <td>王某某</td>
                             <td>424324562004284829</td>
@@ -536,7 +723,7 @@
                             <td>登录日志</td>
                             <td>2015-10-05-09:05:94</td>
                             <td>普通用户</td>
-                            <td>小王</td>
+                            <td>10788</td>
                             <td>武汉科技大学</td>
                             <td>王某某</td>
                             <td>424324562004284829</td>
@@ -570,7 +757,7 @@
             </div>
         </div>
         <!-- /日志查询 -->
-        <!--  增加信息弹出表单 -->
+        <!--  通知弹出 -->
         <div class="mask" style="z-index:999"></div>
         <div class="pay2" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;background: #e8e8e8;border-radius: 6px;">
             <div class="news-top">
@@ -590,13 +777,27 @@
                 </div>
             </div>
         </div>
-        <!--  /增加信息弹出表单 -->
+        <!--  /通知弹出 -->
+        <!-- 增加信息公告 -->
+        <div class="formWrap infoAlert" id="wrapall" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;border-radius: 6px;">
+            <div class="header">
+                <h1>新增信息公告</h1><span class="gb pointer gb-new formGb"></span>
+            </div>
+            <div class="pop-body" id="popup" style="display:block">
+                <form action="" id="pop-form" class="clear" method="get">
+                    <div class="form-btn">
+                        <input type="submit" name="" id="" value="[发布公告]" class="save-btn" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /增加信息公告 -->
         <!-- 增加表单信息 -->
-        <div class="formWrap" id="wrapall" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;border-radius: 6px;">
+        <div class="formWrap formAlert" id="wrapall" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;border-radius: 6px;">
             <div class="header">
                 <h1>新增高校工作人员</h1><span class="gb pointer gb-new formGb"></span>
             </div>
-            <div class="pop-body" id="popup">
+            <div class="pop-body" id="popup" style="display:block">
                 <form action="" id="pop-form" class="clear" method="get">
                     <div class="pop-left fl">
                         <div class="wk">
@@ -681,6 +882,40 @@
             </div>
         </div>
         <!-- /增加表单信息 -->
+        <!-- 新增管理用户 -->
+        <div class="formWrap manageAlert" id="wrapall" style="width: 440px;height: 400px;position: absolute;left:50%;margin-left:-220px;top: -600px;z-index: 1000;border-radius: 6px;">
+            <div class="header">
+                <h1>新增用户</h1><span class="gb pointer gb-new formGb"></span>
+            </div>
+            <div class="pop-body" id="popup" style="display:block;padding:0">
+                <form action="" id="pop-form" class="clear" method="get">
+                    <div class="wk">
+                        <label for="username">用户名 :</label>
+                        <input type="text" value="" name="" placeholder="为用户指定名称" autofocus class="username" id="username" required />
+                    </div>
+                    <div class="formRow">
+                        <label for="workUicode">密码 :</label>
+                        <input type="password" value="" name="" id="workUicode" class="workUicode" placeholder="登陆密码/用户密码" required />
+                    </div>
+                    <div class="formRow">
+                        <label for="role">用户角色 :</label>
+                        <input type="radio" value="" name="role" id="functionary" class="functionary" />
+                        <label for="functionary" class="functionary">负责人员</label>
+                        <input type="radio" value="" name="role" class="entourage" id="entourage" />
+                        <label for="entourage" class="entourage">随行人员</label>
+                    </div>
+                    <div class="formRow">
+                        <label for="userLock">用户锁定 :</label>
+                        <input type="checkbox" value="" name="role" id="userLock" class="userLock" />
+                        <label for="userLock" class="userLock">未锁定</label>
+                    </div>
+                    <div class="form-btn">
+                        <input type="submit" name="" id="" value="[保存]" class="save-btn" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /增加管理用户 -->
     </div>
     <script src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
