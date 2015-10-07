@@ -39,8 +39,9 @@ border-bottom:2px solid #FF4200;color:#FF4200;}
 .manager .pulicTit .mlTab{    /*background: #EBEBEB;*/
 border-bottom:2px solid #FF4200;color:#FF4200;}
 
-/*.workManage .pulicTit{margin-bottom: 0;}*/
-#container .info .statement,#container .info p{line-height:1.56;padding:5px 0;}
+
+#container .info .state{padding-top: 6px;}
+#container .info .statement,#container .info p{line-height:2;padding:5px 0;}
 #container .infoList{margin-top:20px;line-height:35px;}
 #container .info li{list-style:decimal;list-style-position:inside;}
 #infoTime{margin-left:20px;font:100 13px "Monaco";color:#A6E22E;}
