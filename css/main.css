@@ -64,7 +64,7 @@ width:100%;font:14px "宋体，Monaco";}
 #unitForm{height:35px;padding:5px 0;line-height:45px;}
 #unitForm #unitS{display:inline-block;height:35px;width:450px;border-color: #b8b8b8 transparent #ccc #b8b8b8;
   overflow: hidden;border-width:1px;border-style:solid;vertical-align: top;padding:0 5px;color:#000;font:14px/35px "Microsoft YaHei";}
-#unitForm #sureSearch{display:inline-block;cursor:pointer;height:35px;width: 90px;background: #FF4200;color:#FFF;font:14px/35px "Arial";letter-spacing: 1px;border:none;outline:none;vertical-align: top;}
+#unitForm #sureSearch{position: relative;left: -4px;display:inline-block;cursor:pointer;height:35px;width: 90px;background: #FF4200;color:#FFF;font:14px/35px "Arial";letter-spacing: 1px;border:none;outline:none;vertical-align: top;}
 #unitForm #unitS:hover{border-color: #aaa transparent #b8b8b8 #aaa;}
 #unitForm #unitS:focus{border-color: #FA5F2C transparent #FA5F2C #FA5F2C;}
 .showData{padding-right:30px;overflow:hidden;}
