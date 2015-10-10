@@ -154,10 +154,17 @@ $(function() {
             $('.mask').hide()
         });
     });
-     // 增加信息公告
+    // 增加信息公告
     $("#addAd").click(function() {
         $('.mask').show();
         $('.infoAlert').animate({
+            "top": "120px"
+        }, 500).show();
+    });
+    // 用户自主添加信息
+    $("#addWork").click(function() {
+        $('.mask').show();
+        $('.formAlert').animate({
             "top": "120px"
         }, 500).show();
     });
@@ -169,12 +176,13 @@ $(function() {
             "top": "120px"
         }, 500).show();
     });
+
     // 添加用户
     $("#add").click(function() {
         $('.mask').show();
         $('.manageAlert').animate({
             "top": "50%"
-        }, 1000).show();
+        }, 600).show();
     });
 
 
@@ -281,25 +289,25 @@ $(function() {
     // 全选
     $("#allChe").click(function() {
         // alert($(".rizhi").find("input:checkbox"));
-        $(".rizhi").find("input:checkbox").prop('checked',true);
+        $(".rizhi").find("input:checkbox").prop('checked', true);
     });
     $("#invert").click(function() {
         // alert($("#showData").find("table tr td input:checkbox"));
         // 全选使用attr有bug，jQuery对attr做了很明显的区分
         $(".rizhi").find("input:checkbox").each(function() {
-            this.checked=!this.checked;
+            this.checked = !this.checked;
         });
     });
     //表单的锁定效果
 
-        $(".userLock").click(function() {
-           // alert($(".formRow input[class='userLock']").is(":ckecked"));
-            if ($(".formRow input[class='userLock']").is(":checked")) {
-                $("label[class='userLock']").text("已锁定").css("color","#FF4200");
-            }else{
-                 $("label[class='userLock']").text("未锁定").css("color","#aaa");
-            };
-        });
+    $(".userLock").click(function() {
+        // alert($(".formRow input[class='userLock']").is(":ckecked"));
+        if ($(".formRow input[class='userLock']").is(":checked")) {
+            $("label[class='userLock']").text("已锁定").css("color", "#FF4200");
+        } else {
+            $("label[class='userLock']").text("未锁定").css("color", "#aaa");
+        };
+    });
 
 
 

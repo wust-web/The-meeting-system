@@ -11,6 +11,7 @@
     <link href="" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet" />
     <link href="css//reset.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="wangEditor/css/wangEditor-1.3.11.css">
     <!--[if lte IE 6]>
         <link href="css/ie.css" rel="stylesheet" />
     <![endif]-->
@@ -779,14 +780,21 @@
         </div>
         <!--  /通知弹出 -->
         <!-- 增加信息公告 -->
-        <div class="formWrap infoAlert" id="wrapall" style="width: 650px;height: 415px;position: absolute;left:50%;margin-left:-330px;top: -600px;z-index: 1000;border-radius: 6px;">
+        <div class="formWrap infoAlert" id="wrapall" style="width: 800px;min-height:400px;position: absolute;left:50%;margin-left:-400px;top: -600px;z-index: 1000;border-radius: 6px;">
             <div class="header">
                 <h1>新增信息公告</h1><span class="gb pointer gb-new formGb"></span>
             </div>
-            <div class="pop-body" id="popup" style="display:block">
+            <div class="pop-body" id="popup" style="display:block;padding:0">
                 <form action="" id="pop-form" class="clear" method="get">
+                    <div class="annoHead">
+                        <label for="annoTitle" style="width:auto">公告标题：</label>
+                        <input id="annoTitle" type="text" value="" autofocus required placeholder="公告标题">
+                        <label for="annoTime" style="width:auto">发布时间：</label>
+                        <input id="annoTime" type="date" value="" autofocus required placeholder="请输入时间">
+                    </div>
+                    <textarea id='textarea1' style='height:200px; width:100%;min-height:200px;'></textarea>
                     <div class="form-btn">
-                        <input type="submit" name="" id="" value="[发布公告]" class="save-btn" />
+                        <input type="submit" name="" id="" value="发布公告" class="save-btn" />
                     </div>
                 </form>
             </div>
@@ -919,6 +927,12 @@
     </div>
     <script src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src='wangEditor/js/wangEditor-1.3.11.min.js'></script>
+    <script>
+    $(function() {
+        var editor = $('#textarea1').wangEditor();
+    });
+    </script>
 </body>
 
 </html>

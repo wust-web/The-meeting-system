@@ -84,7 +84,7 @@
             </div>
             <div class="control">
                 <button id="sync" class="sync">刷新</button>
-                <button id="add" class="add">新增</button>
+                <button id="addWork" class="addWork">新增</button>
                 <button id="batchDel" class="batchDel">批量删除</button>
                 <button id="export" class="export">批量导出</button>
             </div>
@@ -303,10 +303,10 @@
 
                             <div class="formRow">
                                 <label for="role">用户角色 :</label>
-                                <input type="radio" value="" name="role" id="functionary" class="functionary" />
-                                <label for="functionary" class="functionary">负责人员</label>
-                                <input type="radio" value="" name="role" class="entourage" id="entourage" />
-                                <label for="entourage" class="entourage">随行人员</label>
+                                <input type="radio" value="" name="role" id="fun" class="functionary" />
+                                <label for="fun" class="functionary">负责人员</label>
+                                <input type="radio" id="entour" value="" name="role" class="entourage"  />
+                                <label for="entour"  class="entourage">随行人员</label>
                             </div>
                             <div class="formRow">
                                 <label for="userLock">用户锁定 :</label>
@@ -359,7 +359,7 @@
                     <div class="pop-left fl">
                         <div class="wk">
                             <label for="username">单位名称 :</label>
-                            <input type="text" value="" name=" " class="workName" id="username" />
+                            <input type="text" value="" name=" " class="workName" id="username" autofocus required />
                         </div>
                         <div class="formRow">
                             <label for="">姓名 :</label>
